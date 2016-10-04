@@ -137,6 +137,11 @@ void links(std::vector<User *> &users, const std::string &user1, const std::stri
     std::cout << "degré de séparation entre " << user1 << " et " << user2 << " : " << ret << std::endl;
 }
 
+bool comparator(User *&user1, User *&user2)
+{
+  return user1->getName() < user2->getName();
+}
+
 int main(int ac, char **av)
 {
     if (ac != 4 && ac != 3)
@@ -149,16 +154,7 @@ int main(int ac, char **av)
     if (!readFile(users, av[1]))
         return 1;
 
-
-    struct
-    {
-        bool operator()(User *&user1, User *&user2)
-        {
-            return user1->getName() < user2->getName();
-        }
-    } UserComparator;
-
-    std::sort(users.begin(), users.end(), UserComparator);
+    std::sort(users.begin(), users.end(), comparator);
 
     if (ac == 3)
         matrix(users, true, std::atoi(av[2]));

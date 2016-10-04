@@ -1,22 +1,22 @@
-CXX     =   g++
+CXX		= g++
 
-RM      =   rm -f
+RM		= rm -f
 
-NAME    =   302poignees
+NAME		= 302poignees
 
-SRC     =   main.cpp user.cpp
+SRC		= main.cpp user.cpp
 
-OBJ     =   $(SRC:.cpp=.o)
+OBJ		= $(SRC:.cpp=.o)
 
-all:        $(NAME)
+all:		$(NAME)
 
-$(NAME):    $(OBJ)
-            $(CXX) -o $(NAME) $(OBJ)
+$(NAME):	$(OBJ)
+		$(CXX) -o $(NAME) $(OBJ)
 
 clean:
-            $(RM) $(OBJ)
+		$(RM) $(OBJ)
 
-fclean:     clean
-            $(RM) $(NAME)
+fclean:		clean
+		$(RM) $(NAME)
 
-re:         fclean all
+re:		fclean all

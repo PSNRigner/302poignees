@@ -38,5 +38,6 @@ gen### C++ template
 *.app
 
 #302poignees
+302poignees
 exemple
 CMakeLists.txt
