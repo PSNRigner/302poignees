@@ -137,7 +137,7 @@ void links(std::vector<User *> &users, const std::string &user1, const std::stri
     std::cout << "degré de séparation entre " << user1 << " et " << user2 << " : " << ret << std::endl;
 }
 
-bool comparator(User *&user1, User *&user2)
+bool comparator(const User *user1, const User *user2)
 {
   return user1->getName() < user2->getName();
 }
