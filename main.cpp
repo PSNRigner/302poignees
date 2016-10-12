@@ -157,7 +157,19 @@ int main(int ac, char **av)
     std::sort(users.begin(), users.end(), comparator);
 
     if (ac == 3)
+    {
+        int i = 0;
+        while (av[2][i] || i == 0)
+        {
+            if (av[2][i] < '0' || av[2][i] > '9')
+            {
+                std::cerr << "Invalid number '" << av[2] << "'" << std::endl;
+                return 84;
+            }
+            ++i;
+        }
         matrix(users, true, std::atoi(av[2]));
+    }
     else
         links(users, av[2], av[3]);
 
