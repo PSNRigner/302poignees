@@ -147,12 +147,12 @@ int main(int ac, char **av)
     if (ac != 4 && ac != 3)
     {
         std::cerr << "Usage : " << av[0] << "[number] | [name1 name2]" << std::endl;
-        return 1;
+        return 84;
     }
 
     std::vector<User *> users;
     if (!readFile(users, av[1]))
-        return 1;
+        return 84;
 
     std::sort(users.begin(), users.end(), comparator);
 
