@@ -146,7 +146,7 @@ int main(int ac, char **av)
 {
     if (ac != 4 && ac != 3)
     {
-        std::cerr << "Usage : " << av[0] << "[number] | [name1 name2]" << std::endl;
+        std::cerr << "Usage : " << av[0] << " file [number] | [name1 name2]" << std::endl;
         return 84;
     }
 
